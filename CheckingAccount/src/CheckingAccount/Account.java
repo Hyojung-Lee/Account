@@ -1,11 +1,11 @@
-package Account2;
+package CheckingAccount;
  
 public class Account {
 	private int balance;
 	public int getBalance(){
 		return balance;
 	}
-	public void setBalance(int balance){
+	protected void setBalance(int balance){
 		this.balance=balance;
 	}
 	public int credit(int b){

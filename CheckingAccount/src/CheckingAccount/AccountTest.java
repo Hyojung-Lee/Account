@@ -1,4 +1,4 @@
-package Account2;
+package CheckingAccount;
  
 import java.util.Scanner;
  
