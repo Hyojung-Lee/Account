@@ -6,9 +6,14 @@ public class CheckingAccount extends Account {
 	private int loan_interest;
 	@Override
 	public int debit(int b){
-		balance() -=b;
+		balance -=b;
 		if(balance<0){
 			System.out.printf("Not Enough Money!\n");
+			balance +=b;
+			return 0;
+		}
+		if(b>=credit_limit){
+			System.out.printf("Credit limit Exceeded!");
 			balance +=b;
 			return 0;
 		}

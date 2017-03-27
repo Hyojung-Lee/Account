@@ -1,7 +1,7 @@
 package CheckingAccount;
  
 public class Account {
-	private int balance;
+	protected int balance;
 	public int getBalance(){
 		return balance;
 	}
