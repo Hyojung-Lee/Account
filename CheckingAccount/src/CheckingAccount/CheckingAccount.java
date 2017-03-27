@@ -1,18 +1,16 @@
 package CheckingAccount;
 
 public class CheckingAccount extends Account {
-	private int credit_limit;
-	private int interest;
-	private int loan_interest;
+	private int credit_limit=100;
+	private double interest = 0.02;
+	private double loan_interest = 0.03;
 	@Override
-	public int debit(int b){
+	public double debit(int b){
 		balance -=b;
 		if(balance<0){
-			System.out.printf("Not Enough Money!\n");
-			balance +=b;
-			return 0;
+			System.out.printf("Below Zero!\n");
 		}
-		if(b>=credit_limit){
+		if(b>credit_limit){
 			System.out.printf("Credit limit Exceeded!");
 			balance +=b;
 			return 0;
@@ -21,5 +19,10 @@ public class CheckingAccount extends Account {
 			return balance;
 		
 	}
-	
+	public void nextMonth(){
+		if(balance>=0)
+			balance=balance+balance*interest;
+		else
+			balance=balance+balance*loan_interest;
+	}
 };

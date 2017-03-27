@@ -1,18 +1,18 @@
 package CheckingAccount;
  
 public class Account {
-	protected int balance;
-	public int getBalance(){
+	protected double balance;
+	public double getBalance(){
 		return balance;
 	}
 	protected void setBalance(int balance){
 		this.balance=balance;
 	}
-	public int credit(int b){
+	public double credit(int b){
 		balance +=b;
 		return balance;
 	}
-	public int debit(int b){
+	public double debit(int b){
 		balance -=b;
 		if(balance<0){
 			System.out.printf("Not Enough Money!\n");
@@ -23,6 +23,7 @@ public class Account {
 			return balance;
 	}
 	public void balanceCheck(){
-		System.out.printf("Current Balance: %d\n", balance);
+		System.out.printf("Current Balance:");
+		System.out.println(balance);
 	}
 }

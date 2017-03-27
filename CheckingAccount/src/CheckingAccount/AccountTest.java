@@ -7,9 +7,10 @@ public class AccountTest {
 	public static void main(String[] args){
 		
 		Scanner sc = new Scanner(System.in);
-		Account account1 = new Account();
-		Account account2 = new Account();
-		int a = 0,b=0;
+		CheckingAccount account1 = new CheckingAccount();
+		CheckingAccount account2 = new CheckingAccount();
+		
+		int a = 0,b = 0;
 		System.out.printf("Account1 Balance: ");
 		a = sc.nextInt();
 		account1.setBalance(a);
@@ -17,8 +18,15 @@ public class AccountTest {
 		b = sc.nextInt();
 		account2.setBalance(b);
 		
-		
+
 		while(true){
+			System.out.println("Next Month? 1.Yes  2.No");
+			int month = sc.nextInt();
+			if(month==1){
+				account1.nextMonth();
+				account2.nextMonth();
+			}
+				
 			System.out.println("Select Account:");
 			int num = sc.nextInt();
 			int service=0;
