@@ -10,11 +10,11 @@ public abstract class Account {
 		balance +=b;
 		return balance;
 	}
-	public double debit(int b){
-		balance -=b;
+	public double debit(double amount){
+		balance -=amount;
 		if(balance<0){
 			System.out.printf("Not Enough Money!\n");
-			balance +=b;
+			balance +=amount;
 			return 0;
 		}
 		else
@@ -24,4 +24,6 @@ public abstract class Account {
 		System.out.printf("Current Balance:");
 		System.out.println(balance);
 	}
+	abstract double getWithdrawableAccount();
+	abstract void passTime(int a);
 }

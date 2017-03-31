@@ -9,12 +9,12 @@ public class CheckingAccount extends Account {
 		this.loan_interest = loan_interest;
 	}
 	@Override
-	public double debit(int b){
+	public double debit(double b){
 		balance -=b;
 		if(balance<0){
 			System.out.printf("Below Zero!\n");
 		}
-		if(b>credit_limit){
+		if(balance-b<-1*credit_limit){
 			System.out.printf("Credit limit Exceeded!");
 			balance +=b;
 			return 0;
@@ -28,5 +28,12 @@ public class CheckingAccount extends Account {
 			balance=balance+balance*interest;
 		else
 			balance=balance+balance*loan_interest;
+	}
+	double getWithdrawableAccount(){
+		return balance+credit_limit;
+	}
+	void passTime(int a){
+		for(int i=0;i<a;i++)
+			nextMonth();
 	}
 };
