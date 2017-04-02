@@ -8,7 +8,6 @@ public class SavingsAccount extends Account {
 	}
 	double getWithdrawableAccount() {
 		if(months<=12){
-			System.out.println("아직 출금할 수 없습니다.");
 			return 0;
 		}
 		else
@@ -17,8 +16,8 @@ public class SavingsAccount extends Account {
 	
 	@Override
 	public double debit(double b){
-		if(b>getWithdrawableAccount()){
-			System.out.println("Credit limit Exceeded!");
+		if(months<=12){
+			System.out.println("아직 출금할 수 없습니다.");
 			return 0;
 		}
 		else

@@ -27,7 +27,10 @@ public class CheckingAccount extends Account {
 			balance=balance+balance*loan_interest;
 	}
 	double getWithdrawableAccount(){
-		return balance+credit_limit;
+		if(balance<-1*credit_limit)
+			return 0;
+		else
+			return balance+credit_limit;
 	}
 	void passTime(int a){
 		for(int i=0;i<a;i++)
