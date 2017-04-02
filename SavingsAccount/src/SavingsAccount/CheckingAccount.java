@@ -1,3 +1,4 @@
+package SavingsAccount;
 public class CheckingAccount extends Account {
 	private int credit_limit;
 	private double interest;
@@ -10,16 +11,12 @@ public class CheckingAccount extends Account {
 	}
 	@Override
 	public double debit(double b){
-		balance -=b;
-		if(balance<0){
-			System.out.printf("Below Zero!\n");
-		}
-		if(balance-b<-1*credit_limit){
-			System.out.printf("Credit limit Exceeded!");
-			balance +=b;
+		if(b>getWithdrawableAccount()){
+			System.out.println("Credit limit Exceeded!");
 			return 0;
 		}
 		else
+			balance -=b;
 			return balance;
 		
 	}

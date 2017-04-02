@@ -1,3 +1,4 @@
+package SavingsAccount;
 public abstract class Account {
 	protected double balance;
 	public double getBalance(){
