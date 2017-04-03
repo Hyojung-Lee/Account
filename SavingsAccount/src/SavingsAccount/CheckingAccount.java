@@ -27,13 +27,18 @@ public class CheckingAccount extends Account {
 			balance=balance+balance*loan_interest;
 	}
 	double getWithdrawableAccount(){
-		if(balance<-1*credit_limit)
+		if(isBankrupted()){
+			System.out.println("Bankrupted!");
 			return 0;
+		}
 		else
 			return balance+credit_limit;
 	}
 	void passTime(int a){
 		for(int i=0;i<a;i++)
 			nextMonth();
+	}
+	boolean isBankrupted(){
+		return balance<-credit_limit;
 	}
 };
