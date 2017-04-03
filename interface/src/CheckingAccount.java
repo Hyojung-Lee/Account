@@ -41,4 +41,9 @@ public class CheckingAccount extends Account {
 	boolean isBankrupted(){
 		return balance < -credit_limit;
 	}
+	@Override
+	public double EstimateValue(int month) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 };

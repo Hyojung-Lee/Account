@@ -1,5 +1,5 @@
 
-public abstract class Account {
+public abstract class Account implements Valuable {
 	protected double balance;
 	public double getBalance(){
 		return balance;

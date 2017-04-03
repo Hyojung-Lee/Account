@@ -29,4 +29,9 @@ public class SavingsAccount extends Account {
 		if(months==12)
 			balance=balance*Math.pow(1+interest,months);
 	}
+	@Override
+	public double EstimateValue(int month) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
