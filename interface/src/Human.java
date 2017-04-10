@@ -11,6 +11,6 @@ public class Human implements Valuable {
 		return Double.POSITIVE_INFINITY;
 	}
 	public String toString(){
-		return String.format("Valuable:",EstimateValue);
+		return String.format("Valuable:",);
 	}
 }
