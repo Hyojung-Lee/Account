@@ -1,5 +1,5 @@
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account{
 	private int credit_limit;
 	private double interest;
 	private double loan_interest;
